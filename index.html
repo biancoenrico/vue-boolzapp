@@ -84,7 +84,7 @@
 
                     <div class="center">
                         <ul>
-                            <li class="send" v-for='(item,index) in contacts[thisConversation].messages'>
+                            <li :class="{send: item.status === 'sent'}" v-for='(item,index) in contacts[thisConversation].messages'>
                                 <div >{{item.text}}</div>
                             </li>
                             

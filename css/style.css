@@ -124,6 +124,9 @@ input{
 /* center */
 
 /* ------------------------------------------------------- */
+.center{
+    padding: 10px;
+}
 .right-cont .center{
     height: 100%;
     background-image: url("../img/mine.jpg");
