@@ -85,11 +85,17 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        thisConversation: 0,
+        classe:'sended-mess',
     },
     methods:{
-        loadMessages(){
-            alert('test')
+        changeClass(classe){
+
+            if(this.contacts[thisConversation].status === 'sent'){
+                classe = 'received-mess'
+            }
+
         }
     }
   })

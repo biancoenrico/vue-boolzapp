@@ -18,6 +18,9 @@ input{
     font-size: 20px;
 
 }
+li{
+    list-style-type: none;
+}
 main{
     background: linear-gradient(#019688 15%, #d2dbdc 15%);
     height: 100vh;
@@ -125,31 +128,22 @@ input{
     height: 100%;
     background-image: url("../img/mine.jpg");
 }
-
-.send , .recieve{
-    display: flex;
-    flex-wrap: wrap;
+.gg{
+    position: relative;
 }
-.sended-mess, .recieved-mess{
-    padding: 10px;
-    margin: 10px;
+.center li{
+    padding: 10px 20px 10px 10px;
     border-radius: 10px;
+    background: #d5f9ba;
+    width: 40%;
+    margin-left: auto;
+    margin-bottom: 20px;
 }
+li.send {
+    background: white;
+    margin-left: 0
+ }
 
-.send{
-    justify-content: flex-end;
-}
-.sended-mess{
-    background-color: white;
-}
-
-.recieve{
-    justify-content: flex-start;
-}
-.recieved-mess{
-    background-color: green;
-
-}
 
 /* ------------------------------------------------------- */
 

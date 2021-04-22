@@ -51,7 +51,7 @@
 
                     <input type="text" placeholder="Cerca o inizia una nuova chat"> 
 
-                    <div class="contact" v-for="name in contacts" @click="loadMessages" >
+                    <div class="contact" v-for="(name,index) in contacts" @click="thisConversation = index">
                         <div class="circle">
                             <img :src="'img/avatar' + name.avatar + '.jpg'"  alt="">
                         </div>
@@ -83,16 +83,12 @@
                     </div>
 
                     <div class="center">
-                        <div class="recieve">
-                            <div class="recieved-mess">
-                                dfgbdgb
-                            </div>
-                        </div>
-                        <div class="send">
-                            <div class="sended-mess">
-                                dfgbdgb
-                            </div>
-                        </div>
+                        <ul>
+                            <li class="send" v-for='(item,index) in contacts[thisConversation].messages'>
+                                <div >{{item.text}}</div>
+                            </li>
+                            
+                        </ul>
                     </div>
 
                     <div class="bottom">
