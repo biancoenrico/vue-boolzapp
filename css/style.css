@@ -12,7 +12,10 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(#dcdbd1, #d1dadb);
+}
+main{
+    background: linear-gradient(#019688 15%, #d2dbdc 15%);
+    height: 100vh;
 }
 
 .green{
