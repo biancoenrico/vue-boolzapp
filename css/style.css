@@ -12,12 +12,19 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+input{
+    font-size: 20px;
+
 }
 main{
     background: linear-gradient(#019688 15%, #d2dbdc 15%);
     height: 100vh;
 }
-
+img{
+    width: 100%;
+}
 .green{
     height: 150px;
     background: linear-gradient(#009688, #029588);
@@ -31,11 +38,16 @@ main{
     transform: translate(-50%, -50%);
     background-color: white;
     display: flex;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgb(134, 134, 134);
 }
 .top{
-    height: 75px;
     background-color: #eaeaea;
     border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 input{
     color: gray;
@@ -54,10 +66,6 @@ input{
     border-right: 1px solid rgb(189, 189, 189);
     width: 40%;
 }
-.notification{
-    height: 75px;
-    background-color: #8edafb;
-}
 .left-cont input{
     padding: 10px;
     box-shadow: 0px 0px 3px 0px rgba(194,192,194,1);
@@ -69,7 +77,80 @@ input{
 .contact{
     height: 100px;
     border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
 }
+.contact.circle{
+    background-color: black;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.circle{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.icons{
+    font-size: 24px;
+    color: #b1b1b1;
+}
+.icons .fas{
+    padding: 6px;
+}
+.notification{
+    background-color: #8edafb;
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+}
+.notification .circle{
+    display: flex;
+    align-items: center;
+    color: #8edafb;
+    background-color: white;
+}
+.notification .circle .fas{
+    margin: auto;
+}
+/* ------------------------------------------------------- */
+
+/* center */
+
+/* ------------------------------------------------------- */
+.right-cont .center{
+    height: 100%;
+    background-image: url("../img/mine.jpg");
+}
+
+.send , .recieve{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sended-mess, .recieved-mess{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.send{
+    justify-content: flex-end;
+}
+.sended-mess{
+    background-color: white;
+}
+
+.recieve{
+    justify-content: flex-start;
+}
+.recieved-mess{
+    background-color: green;
+
+}
+
 /* ------------------------------------------------------- */
 
 /* right */
@@ -92,6 +173,10 @@ input{
 .bottom input{
     padding: 10px;
     margin: 10px 0;
-    font-size: 20px;
     width: 80%;
 }
+.bottom{
+    font-size: 28px;
+    color: #6a7376;
+}
+

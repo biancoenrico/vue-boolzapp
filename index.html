@@ -19,17 +19,45 @@
 
                 <section class="left-cont">
 
-                    <div class="top">
+                    <div class="top ">
+
+                        <div class="user">
+                            <div class="circle">
+                                <img src="img/avatar_io.jpg" alt="">
+                            </div>
+                            <span>
+                                nome utente
+                            </span>
+                        </div>
+                        
+                        
+                        <div class="icons">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
 
                     </div>
+
                     <div class="notification">
-
+                        <div class="circle">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div>
+                            ricevi notifiche di nuovi messaggi <br>
+                            <a href="#">attiva notifiche desktop</a>
+                        </div>
                     </div>
 
-                    <input type="text">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat"> 
 
-                    <div class="contact">
-
+                    <div class="contact" v-for="name in contacts" @click="loadMessages" >
+                        <div class="circle">
+                            <img :src="'img/avatar' + name.avatar + '.jpg'"  alt="">
+                        </div>
+                        <div>
+                            {{name.name}}
+                        </div>
                     </div>
 
                 </section>
@@ -38,14 +66,39 @@
 
                     <div class="top">
 
+                        <div class="user">
+                            <div class="circle">
+                                <img src="img/avatar_1.jpg" alt="">
+                            </div>
+                            <span>
+                                nome utente
+                            </span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+
                     </div>
 
                     <div class="center">
-
+                        <div class="recieve">
+                            <div class="recieved-mess">
+                                dfgbdgb
+                            </div>
+                        </div>
+                        <div class="send">
+                            <div class="sended-mess">
+                                dfgbdgb
+                            </div>
+                        </div>
                     </div>
 
                     <div class="bottom">
+                        <i class="far fa-smile"></i>
                         <input type="text">
+                        <i class="fas fa-microphone"></i>
                     </div>
 
                 </section>

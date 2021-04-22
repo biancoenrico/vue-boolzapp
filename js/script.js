@@ -86,5 +86,10 @@ var app = new Vue({
                 ],
             },
         ]
+    },
+    methods:{
+        loadMessages(){
+            alert('test')
+        }
     }
   })
