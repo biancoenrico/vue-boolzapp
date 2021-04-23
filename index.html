@@ -51,16 +51,17 @@
                     <div class="flex">
                         
                         <div class="search"><i class="fas fa-search"></i></div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="filter" type="text" placeholder="Cerca o inizia una nuova chat">
                         
                     </div>
 
-                    <div class="contact" v-for="(name,index) in contacts" @click="thisConversation = index">
+                    <div class="contact" v-for="(name,index) in filtered(contacts)" @click="thisConversation = index">
                         <div class="circle">
                             <img :src="'img/avatar' + name.avatar + '.jpg'"  alt="">
                         </div>
                         <div>
-                            {{name.name}}
+                            {{name.name}}<br>
+                            <span></span>
                         </div>
                     </div>
 
@@ -75,8 +76,11 @@
                                 <img :src="'img/avatar' + contacts[thisConversation].avatar + '.jpg'"  alt="">
                             </div>
                             <span>
-                                {{contacts[thisConversation].name}}
+                                {{contacts[thisConversation].name}} <br>
+                                <span></span>
                             </span>
+                            
+                            
                         </div>
                         <div class="icons">
                             <i class="fas fa-search"></i>

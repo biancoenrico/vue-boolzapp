@@ -88,8 +88,11 @@ var app = new Vue({
         ],
         thisConversation: 0,
         newMessage: '',
+        lastAccess: '',
+        filter:'',
     },
     methods:{
+        
         addMessage(){
             let whatsapp = this.contacts[this.thisConversation].messages;
             let mess = {
@@ -115,8 +118,14 @@ var app = new Vue({
                     text: 'ok',
                     status: 'received'
                 };
+                // this.lastAccess = risposta.date;
                 this.contacts[this.thisConversation].messages.push(risposta);
             }, 1000);
+        },
+        filtered(){
+            return this.contacts.filter((contacts)=>{
+                return contacts.name.match(this.filter.toUpperCase());
+            });
         }
     }
 
