@@ -97,7 +97,7 @@
 
                     <div class="bottom">
                         <i class="far fa-smile"></i>
-                        <input type="text">
+                        <input v-model="newMessage" v-on:keyup.enter="addMessage" type="text">
                         <i class="fas fa-microphone"></i>
                     </div>
 

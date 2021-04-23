@@ -87,5 +87,29 @@ var app = new Vue({
             },
         ],
         thisConversation: 0,
+        newMessage: '',
     },
+    methods:{
+        addMessage(){
+            let whatsapp = this.contacts[this.thisConversation].messages;
+            let mess = {
+                date:'',
+                text:'',
+                status:''
+            };
+            console.log(mess);
+
+            mess.date = dayjs('2019-01-25').format("DD/MM/YYYY HH:mm:ss") ;
+           
+            mess.text = this.newMessage;
+
+            mess.status = 'sent';
+
+            whatsapp.push(mess)
+
+            this.newMessage = '';
+            
+        }
+    }
+
   })
