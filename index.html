@@ -72,7 +72,7 @@
 
                         <div class="user">
                             <div class="circle">
-                                <img :src="'img/avatar_' + (thisConversation + 1) + '.jpg'"  alt="">
+                                <img :src="'img/avatar' + contacts[thisConversation].avatar + '.jpg'"  alt="">
                             </div>
                             <span>
                                 {{contacts[thisConversation].name}}
@@ -90,6 +90,7 @@
                         <ul>
                             <li :class="{received: item.status != 'sent'}" v-for='(item,index) in contacts[thisConversation].messages'>
                                 <div >{{item.text}}</div>
+                                <span class="date">{{item.date}}</span>
                             </li>
                             
                         </ul>

@@ -99,8 +99,7 @@ var app = new Vue({
             };
             console.log(mess);
 
-            mess.date = dayjs('2019-01-25').format("DD/MM/YYYY HH:mm:ss") ;
-           
+            mess.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
             mess.text = this.newMessage;
 
             mess.status = 'sent';
@@ -108,7 +107,16 @@ var app = new Vue({
             whatsapp.push(mess)
 
             this.newMessage = '';
-            
+            console.log(this.contacts[this.thisConversation].avatar);
+
+            setTimeout(() => {
+                let risposta = {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    text: 'ok',
+                    status: 'received'
+                };
+                this.contacts[this.thisConversation].messages.push(risposta);
+            }, 1000);
         }
     }
 
