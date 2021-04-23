@@ -48,8 +48,12 @@
                             <a href="#">attiva notifiche desktop</a>
                         </div>
                     </div>
-
-                    <input type="text" placeholder="Cerca o inizia una nuova chat"> 
+                    <div class="flex">
+                        
+                        <div class="search"><i class="fas fa-search"></i></div>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        
+                    </div>
 
                     <div class="contact" v-for="(name,index) in contacts" @click="thisConversation = index">
                         <div class="circle">
@@ -68,10 +72,10 @@
 
                         <div class="user">
                             <div class="circle">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="'img/avatar_' + (thisConversation + 1) + '.jpg'"  alt="">
                             </div>
                             <span>
-                                nome utente
+                                {{contacts[thisConversation].name}}
                             </span>
                         </div>
                         <div class="icons">
@@ -84,7 +88,7 @@
 
                     <div class="center">
                         <ul>
-                            <li :class="{send: item.status === 'sent'}" v-for='(item,index) in contacts[thisConversation].messages'>
+                            <li :class="{received: item.status != 'sent'}" v-for='(item,index) in contacts[thisConversation].messages'>
                                 <div >{{item.text}}</div>
                             </li>
                             
