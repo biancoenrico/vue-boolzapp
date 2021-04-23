@@ -15,10 +15,13 @@
     
     <div id="root">
         <main>
+            <!-- CONTAINER PRINCIPALE -->
             <div class="container">
 
+                <!-- SEZIONE CONTATTI -->
                 <section class="left-cont">
 
+                    <!-- sezione utente -->
                     <div class="top ">
 
                         <div class="user">
@@ -38,7 +41,9 @@
                         </div>
 
                     </div>
+                    <!-- fine sezione utente -->
 
+                    <!-- sezione notifiche -->
                     <div class="notification">
                         <div class="circle">
                             <i class="fas fa-bell-slash"></i>
@@ -48,13 +53,18 @@
                             <a href="#">attiva notifiche desktop</a>
                         </div>
                     </div>
+                    <!-- fine sezione notifiche -->
+
+                    <!-- ricerca utenti -->
                     <div class="flex">
                         
                         <div class="search"><i class="fas fa-search"></i></div>
                         <input v-model="filter" type="text" placeholder="Cerca o inizia una nuova chat">
                         
                     </div>
+                    <!-- fine ricerca utenti -->
 
+                    <!-- lista contatti -->
                     <div class="contact" v-for="(name,index) in filtered(contacts)" @click="thisConversation = index">
                         <div class="circle">
                             <img :src="'img/avatar' + name.avatar + '.jpg'"  alt="">
@@ -64,13 +74,18 @@
                             <span></span>
                         </div>
                     </div>
+                    <!-- fine lista contatti -->
 
                 </section>
+                <!-- FINE SEZIONE CONTATTI -->
 
+
+                <!-- SEZIONE MESSAGGI -->
                 <section class="right-cont">
 
+                    <!-- UTENTE CON IL QUALE SI STA INTERAGENDO -->
                     <div class="top">
-
+                        <!-- utente -->
                         <div class="user">
                             <div class="circle">
                                 <img :src="'img/avatar' + contacts[thisConversation].avatar + '.jpg'"  alt="">
@@ -79,8 +94,8 @@
                                 {{contacts[thisConversation].name}} <br>
                                 <span></span>
                             </span>
-                            
-                            
+                        <!-- fine utente -->
+                        
                         </div>
                         <div class="icons">
                             <i class="fas fa-search"></i>
@@ -89,7 +104,9 @@
                         </div>
 
                     </div>
+                    <!-- FINE UTENTE CON IL QUALE SI STA INTERAGENDO -->
 
+                    <!-- MESSAGGI -->
                     <div class="center">
                         <ul>
                             <li :class="{received: item.status != 'sent'}" v-for='(item,index) in contacts[thisConversation].messages'>
@@ -99,16 +116,22 @@
                             
                         </ul>
                     </div>
+                    <!-- FINE MESSAGGI -->
 
+                    <!-- SCRITTURA MESSAGGI -->
                     <div class="bottom">
                         <i class="far fa-smile"></i>
                         <input v-model="newMessage" v-on:keyup.enter="addMessage" type="text">
                         <i class="fas fa-microphone"></i>
                     </div>
+                    <!-- FINE SCRITTURA MESSAGGI -->
 
                 </section>
+                <!-- FINE SEZIONE MESSAGGI -->
 
             </div>
+            <!-- FINE CONTAINER PRINCIPALE -->
+
         </main>
     </div>
 

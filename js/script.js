@@ -93,6 +93,8 @@ var app = new Vue({
     },
     methods:{
         
+        // 
+        // per inviare i messaggi nelle chat
         addMessage(){
             let whatsapp = this.contacts[this.thisConversation].messages;
             let mess = {
@@ -111,17 +113,21 @@ var app = new Vue({
 
             this.newMessage = '';
             console.log(this.contacts[this.thisConversation].avatar);
-
+            
+            // 
+            // risposta dell'"interlocutore"
             setTimeout(() => {
                 let risposta = {
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     text: 'ok',
                     status: 'received'
                 };
-                // this.lastAccess = risposta.date;
                 this.contacts[this.thisConversation].messages.push(risposta);
             }, 1000);
         },
+
+        // 
+        // per filtrare i contatti in base al nome
         filtered(){
             return this.contacts.filter((contacts)=>{
                 return contacts.name.match(this.filter.toUpperCase());
