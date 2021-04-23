@@ -89,7 +89,7 @@ var app = new Vue({
         thisConversation: 0,
         newMessage: '',
         lastAccess: '',
-        filter:'',
+        filter: '',
     },
     methods:{
         
@@ -113,7 +113,7 @@ var app = new Vue({
 
             this.newMessage = '';
             console.log(this.contacts[this.thisConversation].avatar);
-            
+
             // 
             // risposta dell'"interlocutore"
             setTimeout(() => {
@@ -130,7 +130,7 @@ var app = new Vue({
         // per filtrare i contatti in base al nome
         filtered(){
             return this.contacts.filter((contacts)=>{
-                return contacts.name.match(this.filter.toUpperCase());
+                return contacts.name.toLowerCase().match(this.filter);
             });
         }
     }
